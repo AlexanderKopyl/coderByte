@@ -1,6 +1,8 @@
 /**
  * @return {string}
  */
+//Return Largest World in string
+
 function LongestWord(sen) {
     const regExp = /\W/g;
 
@@ -24,6 +26,9 @@ function LongestWord(sen) {
     return largestStr;
 
 }
+
+
+//Palindrom
 
 function FirstReverse(str) {
 
