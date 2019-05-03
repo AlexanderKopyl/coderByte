@@ -57,13 +57,23 @@ function LetterChanges(str) {
 
     // we have now successfully converted each letter to the letter following it
     // in the alphabet, and all we need to do now is capitalize the vowels
-    var capitalized = converted.replace(/a|e|i|o|u/gi, function(vowel) {
+    // return the final string
+    return converted.replace(/a|e|i|o|u/gi, function (vowel) {
         return vowel.toUpperCase();
     });
-
-    // return the final string
-    return capitalized;
 
 }
 
 
+function SimpleAdding(num) {
+    let number = num;
+
+    for (var i = num - 1; i !== 0; i--){
+        number += i;
+    }
+
+
+    // code goes here
+    return number
+
+}
