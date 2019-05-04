@@ -77,3 +77,18 @@ function SimpleAdding(num) {
     return number
 
 }
+
+//Letter Capitalize
+/**
+ * @return {string[]}
+ */
+function LetterCapitalize(str) {
+
+    let arr = str.split(' ');
+    let mapArr = arr.map(function (item) {
+        return item.charAt(0).toUpperCase() + item.slice(1);
+    });
+    let result = mapArr.join(" ");
+
+    return result;
+}
