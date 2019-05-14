@@ -180,3 +180,59 @@ function AlphabetSoup(str) {
     return sorted.join("");
 
 }
+
+//Kaprekars Constant
+
+/**
+ * @return {number}
+ */
+function KaprekarsConstant(num) {
+
+    const KAP = 6174;
+    var count = 0;
+
+    while (true) {
+        var nums = evaluator(num);
+        if (nums === true) {
+            return count;
+        }
+    }
+
+    function evaluator(num) {
+        count++;
+        // console.log('count', count);
+        var minNumArr = num.toString().split('').sort();
+        var maxNumArr = minNumArr.slice(0).reverse();
+        var littleNum = parseInt(minNumArr.join(''), 10);
+        var bigNum = parseInt(maxNumArr.join(''), 10);
+
+        while (bigNum < 1000) {
+            bigNum = bigNum * 10;
+        }
+
+        return bigNum - littleNum === KAP ? true : bigNum - littleNum;
+    }
+}
+
+//prototype Object()
+function Person(first, last, age, gender, interests) {
+
+    // property and method definitions
+    this.first = first;
+    this.last = last;
+    this.age = age;
+    this.gender = gender;
+    this.interests = interests;
+}
+/*
+Этот метод --  Object.valueOf()наследуется person1, потому что его конструктором является Person(), а прототипом Person () является Object(). valueOf() возвращает значение вызываемого объекта - попробуйте и убедитесь! В этом случае происходит следующее:
+
+Сначала браузер проверяет, имеет ли объект person1, доступный в нем метод valueOf(), как определено в его конструкторе, Person().
+Это не так, поэтому следующим шагом браузер проверяет, имеет ли прототип объекта (Object()) конструктора Person() доступный в нем метод  valueOf(). Так оно и есть, поэтому он вызывается, и все хорошо!
+ */
+
+var person1 = new Person('Bob', 'Smith', 32, 'male', ['music', 'skiing']);
+
+Person.prototype.farewell = function() {
+    alert(this.first + ' has left the building. Bye for now!');
+};
