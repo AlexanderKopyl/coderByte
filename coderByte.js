@@ -243,10 +243,10 @@ var a = [{A:'A'}, {B:'B'}, {C:'C'}, {D:'D'}, {E:'E'}, {F:'F'}, {G:'G'}, {H:'H'},
 function splitTo( arr, n) {
     var plen = Math.ceil(arr.length / n);
 
-    return arr.reduce( function( p, c, i, a) {
-        if(i%plen === 0) p.push({});
-        p[p.length-1][i] = c;
-        return p;
+    return arr.reduce( function( previousValue, currentValue, index, array) {
+        if(i%plen === 0) previousValue.push({});
+        previousValue[previousValue.length-1][i] = currentValue;
+        return previousValue;
     }, []);
 }
 
