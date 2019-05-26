@@ -236,3 +236,18 @@ var person1 = new Person('Bob', 'Smith', 32, 'male', ['music', 'skiing']);
 Person.prototype.farewell = function() {
     alert(this.first + ' has left the building. Bye for now!');
 };
+
+//Разбить массив на нажуное количество елментов в одном обькте
+var a = [{A:'A'}, {B:'B'}, {C:'C'}, {D:'D'}, {E:'E'}, {F:'F'}, {G:'G'}, {H:'H'}, {I:'I'}];
+
+function splitTo( arr, n) {
+    var plen = Math.ceil(arr.length / n);
+
+    return arr.reduce( function( p, c, i, a) {
+        if(i%plen === 0) p.push({});
+        p[p.length-1][i] = c;
+        return p;
+    }, []);
+}
+
+var result = splitTo( a, 3);
